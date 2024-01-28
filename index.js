@@ -17,11 +17,11 @@ webpush.setVapidDetails(
 );
 
 app.get('/', function (req, res) {
-  res.send('Hello World')
+  res.send([vapidKeys.publicKey, vapidKeys.privateKey])
 })
 
 app.get('/noti', function (req, res) {
-  res.send(vapidKeys)
+  res.send(vapidKeys.publicKey)
 })
 
 app.post('/sendNotification', function (req, res) {
