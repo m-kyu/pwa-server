@@ -25,6 +25,7 @@ app.get('/noti', function (req, res) {
 })
 
 app.post('/sendNotification', function (req, res) {
+  console.log(res.body);
   setTimeout(function () {
     webpush
       .sendNotification(req.body.subscription)
