@@ -25,7 +25,7 @@ app.get('/noti', function (req, res) {
 })
 
 app.post('/sendNotification', function (req, res) {
-  console.log(res.body);
+
   setTimeout(function () {
     webpush
       .sendNotification(req.body.subscription)
@@ -36,8 +36,7 @@ app.post('/sendNotification', function (req, res) {
         res.sendStatus(500);
         console.log(error);
       });
-  }, 10000);
-  res.send('메세지 성공')
+  }, 3000);
 })
 
 app.listen(3000)
