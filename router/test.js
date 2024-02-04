@@ -2,14 +2,16 @@
 const testRouter = require('express').Router();
 const { MongoClient } = require('mongodb');
 
-const connectUrl = 'mongodb+srv://minkyu:6L3lCooFyja23Nmh@minkyu.rlol7cf.mongodb.net/?retryWrites=true&w=majority';
-const client = new MongoClient(connectUrl);
+let connectUrl = 'mongodb+srv://minkyu:6L3lCooFyja23Nmh@minkyu.rlol7cf.mongodb.net/?retryWrites=true&w=majority';
+let client = new MongoClient(connectUrl);
 let collection;
 
 const dbConnect = async ()=>{
+  connectUrl = 'mongodb+srv://minkyu:6L3lCooFyja23Nmh@minkyu.rlol7cf.mongodb.net/?retryWrites=true&w=majority';
+  client = new MongoClient(connectUrl);
   await client.connect(); 
 }
-dbConnect();
+
 
 const crud = async (type, info)=>{
     const db = await client.db('bucket');
@@ -48,6 +50,6 @@ testRouter.put('/test/', async function (req, res) {
 })
 
 
-module.exports = testRouter;
+module.exports = {testRouter,dbConnect};
 
 
