@@ -9,6 +9,7 @@ let collection;
 const dbConnect = async ()=>{
   await client.connect(); 
 }
+dbConnect();
 
 const crud = async (type, info)=>{
     const db = await client.db('bucket');
@@ -47,6 +48,6 @@ testRouter.put('/test/', async function (req, res) {
 })
 
 
-module.exports = {testRouter, dbConnect};
+module.exports = testRouter;
 
 
