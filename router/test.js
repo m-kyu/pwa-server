@@ -2,7 +2,7 @@
 const testRouter = require('express').Router();
 const { MongoClient } = require('mongodb');
 
-const connectUrl = process.env.MONGO_DB;
+const connectUrl = 'mongodb+srv://minkyu:6L3lCooFyja23Nmh@minkyu.rlol7cf.mongodb.net/?retryWrites=true&w=majority';
 const client = new MongoClient(connectUrl);
 let collection;
 
