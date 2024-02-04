@@ -11,5 +11,5 @@ app.use(bodyParser.json());
 app.use('/push', push);
 
 
-app.listen(3000, test.dbConnect)
+app.listen(3000)
 
