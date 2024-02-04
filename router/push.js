@@ -3,11 +3,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const webpush = require('web-push');
 
-const corsOptions = {
-  origin: ['https://r-pwa2.vercel.app'],
-  optionsSuccessStatus: 200
-}
-pushRouter.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: ['https://r-pwa2.vercel.app'],
+//   optionsSuccessStatus: 200
+// }
+// pushRouter.use(cors(corsOptions));
 
 const vapidKeys = webpush.generateVAPIDKeys();
 
