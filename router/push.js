@@ -1,6 +1,6 @@
 const pushRouter = require('express').Router();
 const bodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 const webpush = require('web-push');
 
 // const corsOptions = {
