@@ -7,13 +7,12 @@ let client = new MongoClient(connectUrl);
 let collection;
 
 const dbConnect = async ()=>{
-  connectUrl = 'mongodb+srv://minkyu:6L3lCooFyja23Nmh@minkyu.rlol7cf.mongodb.net/?retryWrites=true&w=majority';
-  client = new MongoClient(connectUrl);
-  await client.connect(); 
+  
 }
-dbConnect();
+
 
 const crud = async (type, info)=>{
+    await client.connect(); 
     const db = await client.db('bucket');
     collection = await db.collection('bucket-list');
 
